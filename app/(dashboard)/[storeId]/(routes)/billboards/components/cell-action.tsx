@@ -11,12 +11,16 @@ import { BillboardColumn } from "./columns";
 import { Button } from "@/components/ui/button";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 interface BillboardProps {
   data: BillboardColumn;
 }
 
 export const CellAction: React.FC<BillboardProps> = ({ data }) => {
+  const router = useRouter();
+  const params = useParams();
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
     toast.success("Billboard Id copied to clipboard.");
@@ -35,7 +39,11 @@ export const CellAction: React.FC<BillboardProps> = ({ data }) => {
           <Copy className="mr-2 h-4 w-4" />
           Copy Id
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            router.push(`/${params.storeId}/billboards/${data.id}`)
+          }
+        >
           <Edit className="mr-2 h-4 w-4" />
           Update
         </DropdownMenuItem>
