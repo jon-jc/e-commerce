@@ -105,9 +105,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       } else {
         await axios.post(`/api/${params.storeId}/products`, data);
       }
-      router.refresh();
+
       router.push(`/${params.storeId}/products`);
       toast.success(toastMessage);
+      router.refresh();
     } catch (error: any) {
       toast.error("Something went wrong.");
     } finally {
@@ -119,9 +120,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
     try {
       setLoading(true);
       await axios.delete(`/api/${params.storeId}/products/${params.productId}`);
-      router.refresh();
+
       router.push(`/${params.storeId}/products`);
       toast.success("Product deleted.");
+      router.refresh();
     } catch (error: any) {
       toast.error("Something went wrong.");
     } finally {
