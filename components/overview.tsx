@@ -12,19 +12,19 @@ export const Overview: React.FC<OverviewProps> = ({ data }) => {
       <BarChart data={data}>
         <XAxis
           dataKey="name"
-          stroke="#888888"
+          stroke="#FEFEFE"
           fontSize={12}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          stroke="#888888"
+          stroke="#FEFEFE"
           fontSize={12}
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) => `$${value}`}
         />
-        <Bar dataKey="total" fill="#3498db" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="total" fill="#FEFEFE" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
