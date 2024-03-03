@@ -25,16 +25,13 @@ Getting Started:
 Clone the repository:
 
 ```sh
-Copy code
 git clone https://github.com/jon-jc/e-commerce.git
+```
 Install packages:
-```
-
 ```sh
-Copy code
 npm install
-Set up your .env file with the necessary keys and URLs for Clerk, Cloudinary, Stripe, and your database.
 ```
+Set up your .env file with the necessary keys and URLs for Clerk, Cloudinary, Stripe, and your database.
 
 Connect to PlanetScale, generate Prisma client, and push the Prisma schema:
 
@@ -42,15 +39,15 @@ Connect to PlanetScale, generate Prisma client, and push the Prisma schema:
 Copy code
 npx prisma generate
 npx prisma db push
-Start the application:
 ```
+Start the application:
+```sh
+npm run dev
+```
+Available Commands:
 
 ```sh
-Copy code
-npm run dev
-Available Commands:
-Use npm to execute the following commands for development and deployment:
-
 npm run dev: Launches a development instance of the application.
 ```
+Use npm to execute the following commands for development and deployment:
 Explore this repository to jumpstart your journey into the world of e-commerce. Elevate your online store with a professional-grade platform designed to streamline operations and enhance user experience.
